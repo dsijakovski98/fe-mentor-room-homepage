@@ -436,6 +436,7 @@ main img {
 	.discover article .controls {
 		width: calc(100dvw / 4);
 	}
+
 	.controls button img {
 		width: 20px;
 		height: 20px;

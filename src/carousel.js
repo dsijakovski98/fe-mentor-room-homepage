@@ -23,7 +23,9 @@ const [prevBtn, nextBtn] = discoverArticle.querySelectorAll('.controls button')
 const updateCarousel = () => {
 	discoverArticle.querySelector('h2').textContent = articles[activeIndex].title
 	discoverArticle.querySelector('p').textContent = articles[activeIndex].paragraph
-	furnitureImage.src = `./images/hero/${activeIndex + 1}.jpg`
+
+	const mobilePrefix = window.innerWidth <= 650 ? 'mobile-' : ''
+	furnitureImage.src = `./images/hero/${mobilePrefix}${activeIndex + 1}.jpg`
 }
 
 prevBtn.addEventListener('click', () => {
@@ -44,6 +46,20 @@ nextBtn.addEventListener('click', () => {
 	}
 
 	updateCarousel()
+})
+
+window.addEventListener('resize', () => {
+	// Update the furniture image to the correct version (desktop/mobile)
+	const img = document.querySelector('.discover .furniture img')
+	const isMobileImg = !!img.src.match('mobile')
+
+	if (window.innerWidth <= 650) {
+		if (isMobileImg) return
+		img.src = `./images/hero/mobile-${activeIndex + 1}.jpg`
+	} else {
+		if (!isMobileImg) return
+		img.src = `./images/hero/${activeIndex + 1}.jpg`
+	}
 })
 
 // Init carousel
