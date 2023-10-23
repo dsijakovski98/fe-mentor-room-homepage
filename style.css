@@ -71,44 +71,38 @@ header {
 	position: fixed;
 	inset-inline: 0;
 
-	padding: 3.5rem 3rem;
+	padding: 2rem 3.5rem;
 }
 
+/* Navigation */
 nav {
+	--link-padding: 0.5rem;
+
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+
 	text-transform: lowercase;
+}
+
+nav .burger {
+	display: none;
 }
 
 nav ul {
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	gap: 2rem;
+	gap: 1rem;
 }
 
 nav a {
 	color: var(--white);
 
 	display: block;
-	padding-bottom: 0.5rem;
-	/* background: green; */
-}
+	padding: var(--link-padding);
 
-nav li {
 	font-size: 20px;
 	position: relative;
-}
-
-nav li:first-child {
-	margin-right: 2rem;
-}
-
-nav li:first-child a {
-	transition: all 250ms;
-}
-
-nav .logo {
-	font-size: 30px;
-	font-weight: 400;
 }
 
 nav a::before {
@@ -116,7 +110,6 @@ nav a::before {
 
 	position: absolute;
 	bottom: 0;
-	inset-inline: 0;
 
 	width: 0;
 	height: 2px;
@@ -128,19 +121,29 @@ nav a::before {
 
 nav a:hover::before,
 nav a:focus-visible::before {
-	width: 100%;
+	width: calc(100% - (var(--link-padding) * 2));
 }
 
-nav li:first-child a::before {
+nav .logo a {
+	font-size: 22px;
+
+	transition: all 250ms;
+}
+
+nav .logo h1 {
+	font-weight: 400;
+}
+
+nav .logo a::before {
 	display: none;
 }
 
-nav li:first-child a:hover,
-nav li:first-child a:focus-visible {
-	transform: scale(1.1);
+nav .logo a:hover,
+nav .logo a:focus-visible {
 	color: var(--dark-gray);
 }
 
+/* Main Content */
 main {
 	--discover-h: 65dvh;
 	--about-h: calc(100dvh - var(--discover-h));
@@ -202,6 +205,33 @@ main img {
 }
 
 @media screen and (max-width: 650px) {
+	/* Navigation */
+	nav {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr;
+		gap: 0;
+	}
+	nav ul {
+		display: none;
+	}
+
+	nav .burger {
+		grid-row: 1 / -1;
+		grid-column: 1 / 2;
+		display: block;
+		order: -1;
+	}
+
+	nav .logo {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+
+		display: grid;
+		place-items: center;
+	}
+
+	/* Main Content */
 	.about .dark {
 		order: 0;
 	}
