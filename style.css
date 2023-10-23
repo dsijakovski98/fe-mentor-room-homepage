@@ -55,7 +55,7 @@ a {
 }
 
 body {
-	font-family: 'League Spartan', sans-serif;
+	font-family: 'League Spartan', sans-serif !important;
 	min-height: 100dvh;
 }
 
@@ -71,7 +71,74 @@ header {
 	position: fixed;
 	inset-inline: 0;
 
-	padding-block: 1rem;
+	padding: 3.5rem 3rem;
+}
+
+nav {
+	text-transform: lowercase;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 2rem;
+}
+
+nav a {
+	color: var(--white);
+
+	display: block;
+	padding-bottom: 0.5rem;
+	/* background: green; */
+}
+
+nav li {
+	font-size: 20px;
+	position: relative;
+}
+
+nav li:first-child {
+	margin-right: 2rem;
+}
+
+nav li:first-child a {
+	transition: all 250ms;
+}
+
+nav .logo {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+nav a::before {
+	content: '';
+
+	position: absolute;
+	bottom: 0;
+	inset-inline: 0;
+
+	width: 0;
+	height: 2px;
+
+	background-color: var(--white);
+
+	transition: all 250ms;
+}
+
+nav a:hover::before,
+nav a:focus-visible::before {
+	width: 100%;
+}
+
+nav li:first-child a::before {
+	display: none;
+}
+
+nav li:first-child a:hover,
+nav li:first-child a:focus-visible {
+	transform: scale(1.1);
+	color: var(--dark-gray);
 }
 
 main {
