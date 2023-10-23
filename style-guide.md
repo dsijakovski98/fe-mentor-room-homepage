@@ -38,7 +38,4 @@ the branch nearest you using our store locator. Any questions? Don't hesitate to
 Manufactured with the best materials Our modern furniture store provide a high level of quality. Our company has
 invested in advanced technology to ensure that every product is made as perfect and as consistent as possible.
 With three decades of experience in this industry, we understand what customers want for their home and office.
-Shop now About our furniture Our multifunctional collection blends design and function to suit your individual
-taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you.
-Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product
-specialists are available to help you create your dream space.
+Shop now About our furniture

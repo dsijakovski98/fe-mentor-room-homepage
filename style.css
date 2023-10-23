@@ -71,7 +71,7 @@ header {
 	position: absolute;
 	inset-inline: 0;
 
-	padding: 2rem 3.5rem;
+	padding: 2rem;
 }
 
 /* Navigation */
@@ -172,6 +172,28 @@ main img {
 	height: var(--about-h);
 }
 
+.about article {
+	display: grid;
+	place-items: center;
+
+	padding: 3rem 3rem;
+}
+
+.about article h3 {
+	width: 100%;
+	text-align: start;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+}
+
+.about article p {
+	color: var(--gray);
+
+	line-height: 1.3;
+	font-size: 16px;
+	text-wrap: balance;
+}
+
 @media screen and (max-width: 1000px) {
 	.discover,
 	.about {
@@ -190,9 +212,23 @@ main img {
 	.about {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
 	.about article {
 		order: -1;
 		grid-column: 1 / -1;
+
+		padding: 2rem;
+	}
+
+	.about article h3 {
+		font-size: 30px;
+		margin-bottom: 1rem;
+	}
+
+	.about article p {
+		font-size: 20px;
+		text-wrap: unset;
+		line-height: inherit;
 	}
 
 	.about .dark {
@@ -223,11 +259,13 @@ main img {
 		top: 0;
 		inset-inline: 0;
 
-		height: 13dvh;
+		height: 100%;
 		background-color: var(--white);
 
 		align-items: center;
 		justify-content: center;
+		gap: 0.5rem;
+
 		transition: all 250ms;
 	}
 
@@ -295,6 +333,15 @@ main img {
 
 	.about article {
 		order: 1;
+	}
+
+	.about article h3 {
+		font-size: 20px;
+		margin-bottom: 0.5rem;
+	}
+
+	.about article p {
+		font-size: 16px;
 	}
 
 	.about .light {
