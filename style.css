@@ -143,6 +143,11 @@ nav .logo a:focus-visible {
 	color: var(--dark-gray);
 }
 
+/* Disable scrolling when mobile nav menu is open */
+body:has(nav ul[aria-expanded='true']) {
+	overflow: hidden;
+}
+
 /* Main Content */
 main {
 	--discover-h: 65dvh;
@@ -389,14 +394,14 @@ main img {
 	nav ul.open::after {
 		content: '';
 
-		position: absolute;
 		background: rgba(0, 0, 0, 0.4);
-		pointer-events: all;
 
-		top: 100%;
+		position: absolute;
+		bottom: 0;
+		transform: translateY(100%);
 
 		width: 100dvw;
-		height: 100dvh;
+		height: 200dvh;
 	}
 
 	nav .burger {
